@@ -40,7 +40,16 @@ form{
 input{
     font-weight: bold;
 }
+ 
+.poke-search input {
+   border-top-left-radius: 15px;
+   border-bottom-left-radius: 15px;
+   
+}
 
+.btn-search{
+   border-radius: 0px 15px 15px 0px;
+}
 
 
 input,
@@ -70,18 +79,31 @@ button{
  }
 
  .poke-box{
-    width: 300px;
-    background-color: white;
-    border-radius: 15px;
-    margin: 0.7rem;
-
+     position: relative;
+      width: 100%; 
+      max-width: 250px; 
+      background-color: white;
+      border-radius: 15px;
+      margin: 0.7rem auto; 
+      padding: 10px; 
 
  }
 
- .poke-box img{
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
+ .poke-box i{
+   position: absolute; 
+    top: 10px; 
+    right: 10px;
+   
+   
+ }
+
+
+
+ .poke-box img {
+   width: 100%; 
+   height: auto; 
+   padding: 10px;
+   margin: 10px 0;
  }
 
  .poke-box h4{
@@ -92,3 +114,116 @@ button{
  .poke-box p{
     margin: 5px auto;
  }
+
+
+/* ******modal******** */
+
+
+/* Button styles */
+#favorite{
+   position: fixed;
+   bottom: 1rem;
+   right: 1rem;
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   width: 40px; 
+   height: 40px; 
+   border-radius: 100%;
+   background-color: #ffffff;
+   color: rgb(0, 0, 0);
+   font-size: 16px; 
+   padding: 0; 
+   border: none; 
+   font-size: 1rem; 
+   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+   z-index: 1000;
+ }
+ 
+ #favorite:hover {
+   background-color: #dfdede;
+ }
+ 
+.favorite-lenght{
+   position: absolute;
+   right: -6px;
+    bottom: 0px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: brown;
+    color: aliceblue;
+    font-size: 14px
+}
+
+ 
+
+ 
+ /* Modal styles */
+ .modal {
+   position: fixed;
+   z-index: 10;
+   inset: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+ }
+ 
+ .modal-backdrop {
+   position: fixed;
+   inset: 0;
+   background-color: rgba(75, 85, 99, 0.75);
+ }
+ 
+ .modal-content {
+   position: relative;
+   background-color: white;
+   border-radius: 0.5rem;
+   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+   max-width: 80%; 
+   width: auto;
+   margin: 1rem;
+   overflow: hidden; 
+ }
+ 
+ .modal-body {
+   padding: 1.5rem;
+   display: grid; 
+   grid-template-columns: repeat(3, 1fr); 
+   gap: 10px; 
+   
+   max-height: 70vh; 
+   overflow-y: auto; 
+ }
+ 
+ /* Modal action buttons */
+ .modal-actions {
+   display: flex;
+   justify-content: flex-end;
+   padding: 1rem;
+   background-color: #f9fafb;
+ }
+ 
+ .modal-actions button {
+   border-radius: 0.375rem;
+   padding: 0.5rem 0.75rem;
+   font-size: 0.875rem;
+   font-weight: 600;
+ }
+ 
+
+ #cancel {
+   background-color: white;
+   color: #111827;
+   border: 1px solid #d1d5db;
+ }
+ 
+ #cancel:hover {
+   background-color: #f3f4f6;
+ }
+ 
+ /* Hidden class */
+ .hidden {
+   display: none;
+ }
+ 

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="app.js" defer></script>
+   
+ 
     <title>Pokedex</title>
 </head>
 <body>
@@ -18,16 +19,48 @@
     <div class="poke-container">
        <!-- <div class="poke-box">
         <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="">
+        <i class="fa-regular fa-heart"></i>
         <h4 class="poke-name">Bulbasaur</h4>
         <p class="poke-id">#001</p>
         <p class="poke-type">type: grass</p>
         <p class="poke-weight">12</p>
        </div> -->
 
-      
-      
-
-
     </div>
+    <button id="favorite" type="button">
+        <i class="fa-regular fa-heart">
+
+        </i>
+        <div class="favorite-lenght">
+
+        </div>
+    </button>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" aria-hidden="true"></div>
+  <div class="modal-content">
+    <div class="modal-body">
+     
+     
+    </div>
+    <div class="modal-actions">
+     
+      <button id="cancel" type="button">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+    <script src="storage.js"></script>
+    <script src="app.js" ></script>
 </body>
 </html>
+
+
+
+
+
+
+
+   

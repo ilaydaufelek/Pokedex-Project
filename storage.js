@@ -3,12 +3,12 @@ class Storage {
       const favorites = localStorage.getItem('favorite');
       if (favorites) {
           try {
-              return JSON.parse(favorites); // Veriyi ayrıştır
+              return JSON.parse(favorites); 
           } catch (error) {
               console.error("JSON ayrıştırma hatası:", error);
-              return []; // Hata varsa boş dizi döndür
+              return []; 
           }
       }
-      return []; // Eğer veri yoksa boş dizi döndür
+      return []; 
   }
 }

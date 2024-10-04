@@ -5,6 +5,8 @@ const cancelButton = document.querySelector("#cancel");
 const modal = document.getElementById('modal');
 const modalButton = document.querySelector("#favorite");
 const favoriteLength = document.querySelector('.favorite-lenght');
+const deleteAll=document.querySelector('#deleteAll')
+
 
 // obje
 const storage = new Storage();
@@ -38,9 +40,11 @@ function eventListener() {
     modalButton.addEventListener("click", () => {
         openModal();
         setFavoritesInModal();
+        
        
     });
     cancelButton.addEventListener("click", cancel);
+     deleteAll.addEventListener("click",deletePokeAll)
 
     document.addEventListener("DOMContentLoaded",  () => {
      
@@ -48,10 +52,22 @@ function eventListener() {
         favoriteLength.textContent = favorites.length;
 
 
-    });
-    
-   
+    });  
 }
+
+function deletePokeAll() {
+   
+    while (favoritesPoke.firstChild) {
+        favoritesPoke.removeChild(favoritesPoke.firstChild);
+    }
+    
+    localStorage.removeItem('favorite');
+    favoriteLength.textContent = 0;
+    updateFavoriteIcons();
+    setFavoritesInModal();
+    disabledButtonAllDelete()
+}
+
 
 function openModal() {
     modal.classList.remove('hidden');
@@ -129,6 +145,8 @@ const createPokemonBox = async (pokemon) => {
             heartIcon.classList.add("fa-solid");
             saveFavoritePokemonToStorage(pokemon);
             
+          
+            
             
         } else {
             
@@ -136,6 +154,7 @@ const createPokemonBox = async (pokemon) => {
             heartIcon.classList.add("fa-regular");
             removeFavoritePokemonFromStorage(pokemon.id);
             
+       
             
         }
  
@@ -186,6 +205,7 @@ const createFavoritePokemonBox = (pokemon) => {
        
         
         setFavoritesInModal(); 
+       
     }); 
     
 }
@@ -213,10 +233,21 @@ const setFavoritesInModal = async () => {
 
     if (favoritePokemons.length === 0) {
         favoritesPoke.innerHTML = "<div>Favori Pokémon'un yok mu? :(</div>";
+        
+      
     } else {
         favoritePokemons.forEach(pokemon => createFavoritePokemonBox(pokemon));
+         
     }
+
+    disabledButtonAllDelete()
+    
 };
+
+function disabledButtonAllDelete(){
+    const favoriteCard =storage.getFromStorage()
+    deleteAll.disabled = favoriteCard.length === 0; 
+}
 
 
 pokeInput.addEventListener("input", function (e) {
@@ -229,6 +260,7 @@ pokeInput.addEventListener("input", function (e) {
         }
     });
 });
+
 
 
 

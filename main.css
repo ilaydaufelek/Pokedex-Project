@@ -226,4 +226,19 @@ button{
  .hidden {
    display: none;
  }
+
+#deleteAll:disabled{
+  background-color:rgb(255, 161, 161) ;
+  color: rgb(255, 255, 255);
+}
+#deleteAll:hover{
+  background-color: rgb(246, 137, 137);
+}
  
+#deleteAll{
+  background-color: rgb(236, 74, 74);
+   color: #ffffff;
+   border: 1px solid #d1d5db;
+   margin-right: 6px;
+  
+}
